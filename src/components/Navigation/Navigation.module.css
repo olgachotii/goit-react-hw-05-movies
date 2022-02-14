@@ -1,0 +1,17 @@
+.nav {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navLink {
+  color: rgb(1, 2, 2);
+}
+
+.navLink:not(:last-child) {
+  margin-right: 10px;
+}
+
+.activNavLink {
+  color: rgb(106, 5, 201);
+}

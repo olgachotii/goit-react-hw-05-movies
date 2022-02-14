@@ -1,0 +1,57 @@
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.castList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.castItem {
+  width: 180px;
+}
+
+.portrait {
+  display: block;
+  width: 180px;
+}
+
+.container {
+  display: flex;
+  padding-bottom: 15px;
+}
+
+.overview {
+  padding-top: 60px;
+  margin-left: 100px;
+}
+
+.poster {
+  width: 200px;
+}
+
+.additional {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: solid 1px #201d1d;
+  border-bottom: solid 1px #201d1d;
+}
+
+.genresList {
+  display: flex;
+}
+
+.genresItem {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}

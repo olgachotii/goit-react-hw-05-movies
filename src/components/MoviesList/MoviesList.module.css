@@ -1,0 +1,17 @@
+.cardsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 15px;
+}
+
+.poster {
+  display: block;
+  width: 200px;
+}
