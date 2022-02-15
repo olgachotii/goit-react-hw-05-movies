@@ -28,7 +28,7 @@ export default function MoviesPageViews() {
     e.preventDefault();
 
     if (value.trim() === '') {
-      return toast.warning('введите имя покемона');
+      return toast.warning('Enter at least one word');
     }
     setValue1(value);
     setValue('');
@@ -43,7 +43,7 @@ export default function MoviesPageViews() {
           value={value}
           onChange={hendleNameChange}
         />
-        <button type="submit">Найти</button>
+        <button type="submit">Search</button>
       </form>
       <MoviesList url={url} data={data} />
     </>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getCast } from 'services/api-service';
 import styles from './Views.module.css';
-// import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Cart({ movieId }) {
   const [actors, setActor] = useState([]);
