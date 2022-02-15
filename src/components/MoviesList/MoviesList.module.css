@@ -9,9 +9,15 @@
 
 .card {
   margin: 15px;
+  width: 200px;
+  /* height: 370px; */
 }
 
 .poster {
   display: block;
   width: 200px;
+}
+
+.title {
+  height: 37px;
 }
