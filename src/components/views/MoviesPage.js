@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useLocation } from 'react-router-dom';
 import { getSearch } from 'services/api-service';
 import MoviesList from 'components/MoviesList/MoviesList';
 
 export default function MoviesPageViews() {
+  const location = useLocation();
+
   const [value, setValue] = useState('');
   const [data, setData] = useState([]);
-  const [movie, setValue1] = useState('');
+  const [movie, setMovie] = useState(
+    location?.state?.from.location.keyword ?? ''
+  );
   const { url } = useRouteMatch();
 
   useEffect(() => {
@@ -30,9 +34,11 @@ export default function MoviesPageViews() {
     if (value.trim() === '') {
       return toast.warning('Enter at least one word');
     }
-    setValue1(value);
+    setMovie(value);
     setValue('');
   };
+
+  console.log('~ location', location);
 
   return (
     <>
@@ -45,7 +51,7 @@ export default function MoviesPageViews() {
         />
         <button type="submit">Search</button>
       </form>
-      <MoviesList url={url} data={data} />
+      <MoviesList url={url} data={data} keyword={movie} />
     </>
   );
 }

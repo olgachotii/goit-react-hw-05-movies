@@ -3,12 +3,14 @@ import {
   NavLink,
   useRouteMatch,
   Route,
-  useHistory,
+  // useHistory,
+  useLocation,
 } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { getMovieDetails } from 'services/api-service';
 
 import styles from './Views.module.css';
+import { Link } from 'react-router-dom';
 
 const Cast = lazy(() => import('./Cast'));
 const Reviews = lazy(() => import('./Reviews'));
@@ -19,11 +21,12 @@ export default function MovieDetailsPage() {
   const { url } = useRouteMatch();
   const { movieId } = useParams();
 
-  const history = useHistory();
+  // const history = useHistory();
+  const location = useLocation();
 
-  const onGoBack = () => {
-    history.goBack();
-  };
+  // const onGoBack = () => {
+  //   history.push(location?.state?.from.location ?? '/');
+  // };
 
   useEffect(() => {
     getMovieDetails(movieId).then(data => {
@@ -37,9 +40,22 @@ export default function MovieDetailsPage() {
     <>
       {movie && (
         <>
-          <button type="button" onClick={onGoBack}>
+          {/* <button type="button" onClick={onGoBack}>
             Go back
-          </button>
+          </button> */}
+          <Link
+            to={{
+              pathname: location?.state?.from.location.pathname ?? '/',
+              state: {
+                from: {
+                  location: location.state.from,
+                },
+              },
+            }}
+          >
+            Go back
+          </Link>
+
           <div className={styles.container}>
             <div>
               <h3>{`${title}`}</h3>
@@ -70,12 +86,28 @@ export default function MovieDetailsPage() {
             <div className={styles.additional}>
               <ul>
                 <li>
-                  <NavLink to={`${url}/cast`} exact>
+                  <NavLink
+                    to={{
+                      pathname: `${url}/cast`,
+                      state: {
+                        from: location.state.from,
+                      },
+                    }}
+                    exact
+                  >
                     Cart
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={`${url}/reviews`} exact>
+                  <NavLink
+                    to={{
+                      pathname: `${url}/reviews`,
+                      state: {
+                        from: location.state.from,
+                      },
+                    }}
+                    exact
+                  >
                     Reviews
                   </NavLink>
                 </li>
