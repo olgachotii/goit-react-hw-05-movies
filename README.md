@@ -1,9 +1,8 @@
-## Сборка проэкта
+## Сборка проекта
 
-(шаблон
-React-проекта)[https://github.com/goitacademy/react-homework-template#readme]
+[шаблон React-проекта](https://github.com/goitacademy/react-homework-template#readme)
 
-### дополнительные пакеты
+### Дополнительные пакеты
 
 ### React-toastify
 
@@ -27,11 +26,11 @@ function App() {
 }
 ```
 
-### маршрутизатор React Router
+### Маршрутизатор React Router
 
 `npm install react-router-dom`
 
-### хостинг Netlify
+### Хостинг Netlify
 
 `npm install netlify-cli -g`
 
@@ -52,8 +51,8 @@ status=200
 ```
 
 2. запускаем проэкт от имени администратора
-3. в powershell прописываем `Set-ExecutionPolicy RemoteSigned`, (еще
-   варианты)[https://stackoverflow.com/questions/41117421/ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system]
+3. в powershell прописываем `Set-ExecutionPolicy RemoteSigned`,
+   [еще варианты](https://stackoverflow.com/questions/41117421/ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system)
 4. если есть
 5. в package.jsonhomepage - удалить, в scripts прописываем
 
