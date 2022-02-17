@@ -38,8 +38,6 @@ export default function MoviesPageViews() {
     setValue('');
   };
 
-  console.log('~ location', location);
-
   return (
     <>
       <form onSubmit={hendleSubmit}>
