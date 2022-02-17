@@ -53,12 +53,11 @@ status=200
 2. запускаем проэкт от имени администратора
 3. в powershell прописываем `Set-ExecutionPolicy RemoteSigned`,
    [еще варианты](https://stackoverflow.com/questions/41117421/ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system)
-4. если есть
-5. в package.jsonhomepage - удалить, в scripts прописываем
+4. в package.json если есть homepage - удалить, в scripts прописываем
 
 ```js
  "predeploy": "npm run build",
  "deploy": "netlify deploy -p"
 ```
 
-6.  запускаем деплой `npm run deploy`
+5.  запускаем деплой `npm run deploy`
